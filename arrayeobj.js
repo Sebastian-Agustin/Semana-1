@@ -49,10 +49,10 @@ return mensaje
 
 
 let students = [
-    { name: "Sebastian", age: 28,  stundent: true, lenguaje: "Javascript" },
+    { name: "Sebastian", age: 90,  stundent: true, lenguaje: "Javascript" },
     { name: "Jorge", age: 34,  stundent: false, lenguaje: "Python" },
     {name: "April", age:21,  stundent: true, lenguaje: "css"},
-    {name: "Pablo", age:17,  stundent: false, lenguaje: "C++"}
+    {name: "Pablo", age:18,  stundent: false, lenguaje: "C++"}
 ]
 
 
@@ -61,24 +61,45 @@ let students = [
 //becomes an object and you can access the data within the
 
 
-students.forEach( student => {
-//we run the enrollstudent function
+// students.forEach( student => {
+// //we run the enrollstudent function
 
-const answer = enrollStudent(student, evaluateAge)
+// const answer = enrollStudent(student, evaluateAge)
 
-//MODIFIED ENROLLSTUDENT FUNCTION MESSAGE
+// //MODIFIED ENROLLSTUDENT FUNCTION MESSAGE
 
-if(answer.includes("ACEPTADO")){
-    console.log(`CONGRATULATIONS
-        Answer: you ARE ACCEPTED, THANKS FOR TRUSTING ${student.name}
-        Exitos con tu nuevo lenguaje de programacion ${student.lenguaje}
-        `)
-	} else {
-    console.log(`Sorry ${student.name}, Rejected!
-        Cuando haya una segunda oportunidad. Pensaremos en ti! ${student.name}
-        `)
-}
+// if(answer.includes("ACEPTADO")){
+//     console.log(`CONGRATULATIONS
+//         Answer: you ARE ACCEPTED, THANKS FOR TRUSTING ${student.name}
+//         Exitos con tu nuevo lenguaje de programacion ${student.lenguaje}
+//         `)
+// 	} else {
+//     console.log(`Sorry ${student.name}, Rejected!
+//         Cuando haya una segunda oportunidad. Pensaremos en ti! ${student.name}
+//         `)
+// }
 
-});
+// });
 
+//Using filter and map
 
+// console.log(students.filter( student => student.age >= 18))
+//filter filtrando solo los estudiantes mayores a 18 o que tenga 18 edad
+
+//importante la flecha va dentro de los parents
+
+const respuesta = students.filter((student)=> {
+    //condicion 
+  return student.age >= 18 && student.age <= 90
+})
+
+/// IMPORTANT MAP. DOES NOT NEED A CONDITION LIKE FILTER
+///MAP RECORRE EL ARRAY TRANSFORMA y devuelve siempre la misma cantidad
+const mapeoDeRes = respuesta.map( student =>{
+    return{
+        name: student.name,
+        lenguaje: student.lenguaje
+    }
+})
+
+console.log(mapeoDeRes)
