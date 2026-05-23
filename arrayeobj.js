@@ -103,3 +103,21 @@ const mapeoDeRes = respuesta.map( student =>{
 })
 
 console.log(mapeoDeRes)
+
+
+let arr = [10, 15, 30, "c", "e", 75, 40, "q", 62, 23]
+
+//first name of the path variable
+//then the condition
+
+let number = arr.filter( number => number > 40)
+console.log(number)
+
+let string = arr.filter( string => (typeof string === "string"))
+console.log(string)
+
+
+
+let stringandNumber = arr.filter( answer => (typeof answer === "number") || (typeof answer ==="string"))
+
+console.log(stringandNumber)
