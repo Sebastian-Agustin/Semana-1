@@ -88,21 +88,21 @@ let students = [
 
 //importante la flecha va dentro de los parents
 
-const respuesta = students.filter((student)=> {
-    //condicion 
-  return student.age >= 18 && student.age <= 90
-})
+// const respuesta = students.filter((student)=> {
+//     //condicion 
+//   return student.age >= 18 && student.age <= 90
+// })
 
 /// IMPORTANT MAP. DOES NOT NEED A CONDITION LIKE FILTER
 ///MAP RECORRE EL ARRAY TRANSFORMA y devuelve siempre la misma cantidad
-const mapeoDeRes = respuesta.map( student =>{
-    return{
-        name: student.name,
-        lenguaje: student.lenguaje
-    }
-})
+// const mapeoDeRes = respuesta.map( student =>{
+//     return{
+//         name: student.name,
+//         lenguaje: student.lenguaje
+//     }
+// })
 
-console.log(mapeoDeRes)
+
 
 
 let arr = [10, 15, 30, "c", "e", 75, 40, "q", 62, 23]
@@ -110,14 +110,53 @@ let arr = [10, 15, 30, "c", "e", 75, 40, "q", 62, 23]
 //first name of the path variable
 //then the condition
 
-let number = arr.filter( number => number > 40)
-console.log(number)
+// let number = arr.filter( number => number > 40)
+// console.log(number)
 
-let string = arr.filter( string => (typeof string === "string"))
-console.log(string)
+// let string = arr.filter( string => (typeof string === "string"))
+// console.log(string)
 
 
 
-let stringandNumber = arr.filter( answer => (typeof answer === "number") || (typeof answer ==="string"))
+// let stringandNumber = arr.filter( answer => (typeof answer === "number") || (typeof answer ==="string"))
 
-console.log(stringandNumber)
+// console.log(stringandNumber)
+
+
+
+// const arrayNumbers = [10,20,30,40]
+
+
+// let reduNumber = arrayNumbers.reduce((accumulator, element)=>{
+// return accumulator + element 
+// }, 10)
+
+// console.log(reduNumber)
+
+
+let sumaDeEdades = students.reduce((accumulator, element) => {
+    return accumulator + element.age
+},0)
+
+//Esto es para sumar todas las edades de los estudiantes
+//accumulator functions with an initial number that is passed in the parameter
+//it can be any number but mostly when it is sum the accumulator starts with 0
+//
+
+
+let namereduceStringe = students.reduce((accumulator, element) =>{
+    return accumulator + element.name + " "
+},"")
+
+// Reduce what it does is that the accumulator passes the first value to you. And as an empty string passes, what it does is grab that value
+// and since it is an empty string, and in  js put a + what it is doing is concatenating the empty string with the element.name + a string with an empty space
+//in the second round there will be Sebastian with a space + a concatenation again and another empty string and so on continuously
+
+
+
+let objreduce = students.reduce((accumulator, element)=>{
+    accumulator[element.name] = element.age
+    return accumulator
+},{})
+
+console.log(objreduce)
