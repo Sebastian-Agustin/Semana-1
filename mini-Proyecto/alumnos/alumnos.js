@@ -74,7 +74,7 @@ let mediaStudent = arrStudentAcept.reduce((accumulator, element ) =>{
     
 },0)
 
-let calculateAverage = mediaStudent / arrStudentAcept.length
+let calcularPromedio = mediaStudent / arrStudentAcept.length
 
 console.log(calcularPromedio)
 
