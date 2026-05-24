@@ -95,12 +95,11 @@ let students = [
 
 /// IMPORTANT MAP. DOES NOT NEED A CONDITION LIKE FILTER
 ///MAP RECORRE EL ARRAY TRANSFORMA y devuelve siempre la misma cantidad
-// const mapeoDeRes = respuesta.map( student =>{
-//     return{
-//         name: student.name,
-//         lenguaje: student.lenguaje
-//     }
-// })
+const mapeoDeRes = respuesta.map( student =>{ return{
+        name: student.name,
+        lenguaje: student.lenguaje
+    }
+})
 
 
 
