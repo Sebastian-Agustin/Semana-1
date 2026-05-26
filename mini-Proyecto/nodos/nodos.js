@@ -20,3 +20,6 @@ boton2.addEventListener("click", () =>{
     let anserInput = input.value
     result.innerText =`${anserInput}  `
 })
+
+//order is my first I capture the elements of the node
+// then I pass them the function I want, in this hood the event
