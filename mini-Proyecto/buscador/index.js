@@ -10,7 +10,7 @@ inputSearch.addEventListener("input", ()=>{
     //I create an array where I filter languages in the array according to what the user is writing
     //I anticipated because if the user writes in lowercase the language they are looking for
     //I wasn't going to find it, that's why I used the tolowercase function. So that the elements of the array that are inside
-    //sean minuscula, y lo que escribe el usuario tambien. Y pueda retornar el valor que esta buscando 
+    //be lowercase, and what the user writes as well. And can return the value you're looking for
     const answer = lenguajes.filter( element => element.toLowerCase().includes(inputSearch.value.toLowerCase()))
     console.log(answer.join(", "))// this is a way for you to return the array in a string. USING the JOIN METHOD
     //If there is  another way that
